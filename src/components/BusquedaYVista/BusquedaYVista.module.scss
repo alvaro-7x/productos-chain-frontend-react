@@ -1,0 +1,166 @@
+.containerBusquedaYVista
+{
+  padding: 16px 32px 0 32px;
+  text-align: right;
+
+  .btnGroup
+  {
+    border-radius: 4px;
+    border: 1px solid #e0e0e0;
+    display: inline-flex;
+    flex-direction: row;
+    text-align: right;
+
+    .btn
+    {
+      background-color: white;
+      border: 0;
+      border-right: 1px solid #e0e0e0;
+      cursor: pointer;
+      line-height: 48px;
+      margin: 0;
+      outline: none;
+      padding: 0;
+      transition: 0.1s ease-in-out;
+
+      &:first-child
+      {
+        border-radius: 4px 0 0 4px;
+      }
+
+      &:last-child
+      {
+        border-radius: 0 4px 4px 0;
+      }
+
+      span
+      {
+        display: inline-block;
+        padding: 0 12px;
+
+        .icono
+        {
+          color: rgba(0,0,0,0.85);
+          font-size: 24px;
+          vertical-align: middle;
+        }
+      }
+
+      &:last-child
+      {
+        border-right: 0;
+      }
+
+      &:hover
+      {
+        background-color: rgba(224, 224, 224, 0.3);
+      }
+    }
+  }
+
+  .busqueda
+  {
+    display: block;
+    margin-top: 16px;
+    width: 100%;
+
+    .prodBuscar
+    {
+      background: white;
+      border-radius: 4px;
+      border: 1px solid rgba(0,0,0,0.7);
+      display: flex;
+      flex-flow: row;
+      height: 40px;
+      justify-content: space-around;
+      overflow: hidden;
+      position: relative;
+      transition: 0.1s ease-in-out;
+
+      &:focus-within,
+      &:hover
+      {
+        box-shadow: inset 0 0 3px rgba(0,0,0,0.9);
+      }
+
+      .iconoBuscar
+      {
+        align-items: center;
+        border-radius: 0;
+        box-shadow: none;
+        color: rgba(0,0,0,0.7) !important;
+        display: flex;
+        font-size: 24px;
+        height: initial;
+        justify-content: center;
+        width: 40px;
+      }
+
+      .inputBuscar
+      {
+        background: transparent;
+        border-radius: 0;
+        border: none;
+        box-shadow: none;
+        font-size: 20px;
+        height: initial;
+        margin: 5px 0;
+        width: 100%;
+
+        &:invalid
+        {
+          animation: parpadeo 1.5s step-end infinite;
+          caret-color: transparent;
+          opacity: 1;
+          -webkit-text-decoration-color: rgba(0,0,0,0.5);
+          text-decoration-color: #000;
+          text-decoration-thickness: 3px;
+          text-underline-offset: 2px;
+        }
+      }
+
+      .cancelBuscar
+      {
+        height: 100%;
+        box-shadow: none;
+        width: 40px;
+        position: absolute;
+        right: 0;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+
+        svg
+        {
+          font-size: 27px;
+          vertical-align: middle;
+        }
+      }
+    }
+
+    .prodResultado
+    {
+      width: 100%;
+      text-align: left;
+      font-size: 13px;
+    }
+  }
+}
+
+.btnActive
+{
+  background-color: #e0e0e0 !important;
+}
+
+@keyframes parpadeo {
+ 0%
+ {
+  -webkit-text-decoration-line:none;
+  text-decoration-line:none;
+ }
+ 50%
+ {
+  -webkit-text-decoration-line:underline;
+  text-decoration-line:underline;
+ }
+}

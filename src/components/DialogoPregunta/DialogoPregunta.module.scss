@@ -1,0 +1,280 @@
+@import '../colores';
+
+@mixin botonDisabled($color)
+{
+  transition: 0.1s;
+  &:disabled
+  {
+    color: grey;
+    cursor: not-allowed;
+  }
+}
+
+.container
+{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: rgba(0,0,0,0.7);
+  z-index: 10;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s ease-in-out;
+  font-size: 13px;
+
+
+  .dialogo
+  {
+    width: 430px;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    padding: 24px;
+    box-shadow: 0 11px 15px -7px #fff3,0 24px 38px 3px #ffffff24,0 9px 46px 8px #ffffff1f;
+    overflow: hidden;
+
+    .header
+    {
+      display: flex;
+      justify-content: center;
+      align-items: start;
+      flex-direction: column;
+
+      .titulo
+      {
+        margin-bottom: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        h2
+        {
+          display: inline;
+          font-size: 20px;
+          font-weight: 500;
+          letter-spacing: -1px;
+        }
+      }
+
+      .detalleCuenta
+      {
+        width: 100%;
+      }
+    }
+
+    .contenido
+    {
+      max-height: 45vh;
+      overflow: auto;
+
+      margin-left: -24px;
+      margin-right: -24px;
+      padding-left: 24px;
+      padding-right: 24px;
+      display: block;
+    }
+
+    .acciones
+    {
+      width: 100%;
+      padding: 8px 0;
+      display: flex;
+      justify-content: flex-end;
+      transform: translateY(8px);
+
+    }
+  }
+
+}
+
+.btn
+{
+  border: none;
+  margin-left: 8px;
+  padding: 0px 16px;
+  border-radius: 4px;
+  line-height: 36px;
+  font-weight: bold;
+  cursor: pointer;
+
+  &.btnSuccess
+  {
+    background-color: $colorSuccess;
+    color: white;
+     @include botonDisabled($colorSuccess);
+  }
+
+  &.btnDanger
+  {
+    background-color: $colorError;
+    color: white;
+     @include botonDisabled($colorError);
+  }
+}
+
+.icono
+{
+  display: inline-block;
+  margin-right: 5px;
+  font-size: 20px;
+  color: black !important;
+}
+
+.fila
+{
+  margin-bottom: 6px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-size: 14px;
+  padding: 3px 0;
+
+  .label
+  {
+    font-weight: 500;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .texto
+  {
+    text-align: left;
+  }
+
+  .input
+  {
+    input
+    {
+      -moz-appearance: textfield;
+      border: none;
+      border-bottom: 1px solid gray;
+
+      text-align: right;
+      background-color: transparent;
+      padding: 8px 0;
+      width: 100%;
+      font-size: 16px;
+    }
+  }
+}
+
+.divisor
+{
+  width: 100%;
+  border-bottom: 1px solid #0000001f;
+  margin: 7px auto;
+}
+
+.errorDialogo
+{
+  text-align: left;
+  display: block;
+  background-color: #f00c;
+  color: #fff;
+  margin-top: .5em;
+  padding: 2px 6px;
+}
+
+.textoDatos
+{
+  text-align: right !important;
+  padding: 8px 0;
+  font-size: 16px;
+}
+
+.textoTotal
+{
+  font-size: 18px;
+  font-weight: bolder;
+  color: #000000e6;
+  overflow: hidden;
+}
+
+.gasSugerido
+{
+  display: block;
+  font-size: 11px;
+  text-align: right;
+  color: #0009;
+
+  span
+  {
+    font-weight: bolder;
+  }
+}
+
+.progressBar
+{
+  margin-top: 8px;
+}
+
+.colTx
+{
+  max-height: 63px;
+  overflow-y: auto;
+  scrollbar-color: $color1 white;
+
+  .tx
+  {
+    display: block;
+
+    a
+    {
+      text-decoration: none;
+      font-size: 14px;
+      display: inline-block;
+      color: rgba(0,0,0,0.7);
+      font-weight: bold;
+      transition: 0.3s ease-in-out;
+
+      &:hover
+      {
+        text-decoration: underline;
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+@media (max-width: 430px)
+{
+
+  .container
+  {
+    padding: 20px 40px;
+  }
+
+  .acciones
+  {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    button
+    {
+      margin: 4px 0 !important;
+    }
+  }
+
+  .fila
+  {
+    grid-template-rows: 1fr !important;
+    grid-template-columns: unset;
+
+    input
+    {
+      text-align: left !important;
+    }
+  }
+
+  .textoDatos,
+  .gasSugerido
+  {
+    text-align: left !important;
+  }
+}

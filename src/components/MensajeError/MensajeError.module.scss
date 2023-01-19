@@ -1,0 +1,37 @@
+.mensajeError
+{
+  position: fixed;
+  top: 64px;
+  right: 0;
+  z-index: 10;
+  margin: 15px 15px 0 15px;
+  border-radius: 7px;
+  overflow: hidden;
+
+  .contenido
+  {
+    position: relative;
+    align-items: center;
+    background-color: #f00c;
+    border-radius: 6px;
+    box-shadow: 0 7px 14px #0003;
+    color: #fff;
+    display: flex;
+    font-size: 15px;
+    padding: 14px 48px 14px 14px;
+    right: 0;
+    text-align: left;
+
+    .icono
+    {
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: 24px;
+      margin: 0 0 3px 3px;
+      cursor: pointer;
+
+      padding: 5px 5px 0 0;
+    }
+  }
+}

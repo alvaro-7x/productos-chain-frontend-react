@@ -1,0 +1,25 @@
+
+.tooltip
+{
+  position: absolute;
+  background: black;
+  color: white;
+  font-size: 15px;
+  border-radius: 7px;
+  display: flex;
+  transform: translateY(10px) scale(0);
+  max-width: 270px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding: 8px 16px;
+  z-index: 1;
+  line-height: normal;
+  cursor: auto !important;
+
+  .texto
+  {
+    color: white !important;
+    width: max-content;
+    text-align: left;
+  }
+}

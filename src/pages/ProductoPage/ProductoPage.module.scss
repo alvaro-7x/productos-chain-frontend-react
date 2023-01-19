@@ -1,0 +1,362 @@
+@import '../../components/colores';
+
+@mixin espacio
+{
+  width: 100%;
+  margin: 14px 0;
+}
+
+.container
+{
+  width: 100%;
+  padding: 40px;
+  display: block;
+  
+  .contenido
+  {
+    position: relative;
+    box-shadow: 0 3px 18px -6px rgba(0, 0, 0, 0.3019607843);
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 1.7fr 1fr;
+    overflow: hidden;
+
+    .imgContainer
+    {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 35vw;
+      height: 100%;
+      overflow: hidden;
+      padding: 0px 2px;
+      background-color: rgba(0,0,0,0.05);
+
+      img
+      {
+        object-fit: contains;
+        width: 100%;
+        height: 100%;
+        padding: 5px;
+
+        padding: 1px;
+        border-bottom-right-radius: 10px;
+        border-top-right-radius: 10px;
+      }
+    }
+
+    .info
+    {
+      color: red;
+      display: block;
+      font-size: 16px;
+      font-style: italic;
+      max-width: 100%;
+      text-align: justify;
+      width: 100%;
+      word-break: break-word;
+      padding: 10px 30px 5px 0;
+    }
+
+    form
+    {
+      padding: 20px 30px;
+      background-color: white;
+
+      .productoNombre
+      {
+        @include espacio;
+
+        input
+        {
+          background-color: transparent;
+          border: 1px solid transparent;
+          color: #000;
+          display: block;
+          font-size: 1.8em;
+          font-weight: 400;
+          width: 100%;
+        }
+      }
+
+        .datosUsuario
+        {
+          @include espacio;
+        }
+
+        .productoDescripcion
+        {
+          @include espacio;
+
+          label
+          {
+            width: 100%;
+            display: block;
+            color: #000;
+            font-size: 20px;
+
+            span
+            {
+              font-size: 12px;
+              font-weight: bolder;
+              display: inline-block;
+            }
+          }
+
+          textarea
+          {
+            border: 1px solid transparent;
+            width: 100%;
+            font-size: 1.8em;
+            font-weight: 400;
+            background-color: transparent;
+            display: block;
+
+            font-size: 16px;
+            resize: none;
+            color: gray;
+            text-align: justify;
+            scrollbar-color: var(--color-toolbar) var(--color-background);
+          }
+        }
+
+        .productoDestacado
+        {
+          @include espacio;
+
+          label
+          {
+            cursor: pointer;
+            position: relative;
+
+            input[type=checkbox]
+            {
+              visibility: hidden;
+              pointer-events: none;
+            }
+
+            input[type=checkbox]:checked + i
+            {
+              background-color: black;
+
+              &::before
+              {
+                content: "";
+                position: absolute;
+                width: 15px;
+                height: 15px;
+                background-color: black;
+                box-shadow: inset 0px 0px 0px 3px white;
+                border-radius: 4px;
+              }
+            }
+
+            i
+            {
+              position: absolute;
+              width: 19px;
+              height: 19px;
+              left: 0;
+              border: 2px solid black;
+              border-radius: 4px;
+            }
+
+            span
+            {
+              margin-left: 25px;
+            }
+          }
+        }
+
+        .productoImagen
+        {
+          @include espacio;
+          
+          input[type='file']
+          {
+            display: none;
+          }
+
+          .file
+          {
+            border-radius: 4px;
+            display: inline-block;
+            padding: 10px;
+            cursor: pointer;
+            transition: 0.2s ease-in-out;
+
+            &:hover
+            {
+              background-color: rgba(0,0,0,0.15);
+            }
+          }
+
+          .imgPermitidas
+          {
+            font-style: italic;
+            font-size: 12px;
+            @include espacio;
+
+            span
+            {
+              font-weight: 700;
+            }
+          }
+        }
+
+        .acciones
+        {
+          text-align: right;
+        }
+
+    }
+  }
+
+  .info
+  {
+    display: block;
+  }
+}
+
+.btn
+{
+  width: auto;
+  padding: 11px;
+  margin: 6px 6px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 17px;
+
+  &Danger
+  {
+    color: white;
+    background-color: $colorError;
+    transition: 0.2s ease-in-out;
+
+    &:hover
+    {
+      background-color: darken($colorError, 5%) !important;
+    }
+  }
+  &Success
+  {
+    color: white;
+    background-color: $colorSuccess;
+    transition: 0.2s ease-in-out;
+
+    &:hover
+    {
+      background-color: darken($colorSuccess, 5%) !important;
+    }
+  }
+}
+
+.error
+{
+  color: red !important;
+}
+.errorTexto
+{
+  color: rgba(255,0,0,0.7) !important;
+  text-decoration: underline;
+}
+
+@media (max-width: 800px)
+{
+  .container
+  {
+    color: white;
+    text-align: center;
+    padding: 20px 30px;
+    width: 100%;
+
+    .contenido
+    {
+      position: relative;
+      box-shadow: none !important;
+      border-radius: unset !important;
+      display: block;
+
+      .imgContainer
+      {
+        padding: 10px;
+        width: 100%;
+        display: block;
+        text-align: center;
+        background-color: transparent;
+        position: relative !important;
+        left: 0;
+        border-radius: unset;
+        border: none;
+        box-shadow: unset;
+
+        img
+        {
+          max-width: 100%;
+          width: auto;
+          height: auto;
+          box-shadow: 0px 0px 3px gray;
+          border-radius: 10px;
+        }
+
+
+
+
+      }
+
+      .info
+      {
+        padding: 10px 5px !important;
+      }
+
+      form
+      {
+        text-align: left;
+        color: black;
+        padding: 0;
+
+        background-color: white;
+        padding: 5px 15px;
+        border-radius: 7px;
+
+        textarea
+        {
+          height: auto !important;
+        }
+      }
+
+    }
+  }
+
+  .btn
+  {
+    width: 100% !important;
+    margin: 6px 0 !important;
+  }
+}
+
+.etiqueta
+{
+  color: black;
+  font-size: 16px;
+}
+
+.texto
+{
+  color: grey;
+}
+
+.icono
+{
+  font-size: 24px;
+  vertical-align: middle;
+}
+
+.separador
+{
+  width: 100%;
+  border-bottom: 1px solid #0000001f;
+  margin: 3px 0;
+}

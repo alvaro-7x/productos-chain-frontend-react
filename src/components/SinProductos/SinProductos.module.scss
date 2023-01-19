@@ -1,0 +1,48 @@
+@import '../colores';
+
+.sinProductos
+{
+  width: 100%;
+  height: calc(100vh - 130px);
+  display: table;
+  text-align: center;
+
+  .mensaje
+  {
+    width: inherit;
+    height: inherit;
+    display: table-cell;
+    font-style: oblique;
+    font-size: 17px;
+    font-weight: lighter;
+    vertical-align: middle;
+    padding: 0 50px;
+    text-align: center;
+
+    .btnAccion
+    {
+      width: 64px;
+      height: 36px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      background: white;
+      box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+      outline: none;
+      position: relative;
+      font-size: 27px;
+      pointer-events: none;
+      display: inline-block;
+      color: $color1;
+      vertical-align: middle;
+
+      .icono
+      {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}

@@ -1,0 +1,82 @@
+.containerNotificacion
+{
+  display: flex;
+  justify-content: center;
+
+  section
+  {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+  
+    .contenido
+    {
+      border-radius: 4px;
+      display: flex;
+      margin: 24px;
+      max-width: 33vw;
+      min-width: 344px;
+      padding: 14px 16px;
+      min-height: 48px;
+      background: black;
+      color: white;
+      position: relative;
+      overflow: hidden;
+      transition: 0.2s ease-in-out;
+      width: 100%;
+      font-size: 14px;
+      z-index: 20;
+
+      .icono
+      {
+        font-size: 24px;
+        margin-right: 5px;
+        display: flex;
+        align-items: center;
+      }
+  
+      .texto
+      {
+        width: 100%;
+        overflow: hidden;
+        word-wrap: break-word;
+        a
+        {
+          color: white;
+          text-decoration: none;
+          font-weight: 700;
+  
+          &:hover
+          {
+            text-decoration: underline;
+          }
+        }
+      }
+  
+      .cerrar
+      {
+        font-size: 24px;
+  
+        svg
+        {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 400px)
+{
+  .containerNotificacion
+  {
+    .contenido
+    {
+      max-width: unset;
+      min-width: unset;
+      margin: 24px 12px;
+    }
+  }
+}

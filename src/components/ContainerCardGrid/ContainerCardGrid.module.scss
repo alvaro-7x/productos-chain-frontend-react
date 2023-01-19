@@ -1,0 +1,19 @@
+.container
+{
+  width: 100%;
+  overflow-y: scroll;
+  margin: 20px 0 30px 0;
+  padding: 0 32px;
+
+  .gridContainer
+  {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 330px), 350px));
+    gap: 25px;
+    justify-content: space-around;
+
+    margin: 0;
+    padding: 0;
+    overflow-x: scroll;
+  }
+}

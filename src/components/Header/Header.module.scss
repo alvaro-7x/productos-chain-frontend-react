@@ -1,0 +1,115 @@
+@import '../colores';
+
+.header
+{
+  position: relative;
+  width: 100%;
+  height: 64px;
+
+  .nav
+  {
+    box-shadow: 0 3px 5px -1px #0003, 0 6px 10px #00000024, 0 1px 18px #0000001f;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background-color: $color1;
+    color: white;
+    width: inherit;
+    height: inherit;
+    flex: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+
+    .detalles
+    {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      .iconMenu
+      {
+        cursor: pointer;
+        color: white !important;
+        border-radius: 5px;
+        width: 38px;
+        height: 38px;
+        font-size: 38px;
+        margin-right: 4px;
+        transition: 0.4s;
+
+        &:hover
+        {
+          color: $color1 !important;
+          background-color: white;
+        }
+      }
+
+      h1
+      {
+        margin-left: 7px;
+        font-size: 21px;
+      }
+
+      .btnAccion
+      {
+        width: 64px;
+        height: 36px;
+        border: none;
+        text-align: center;
+        border-radius: 4px;
+        cursor: pointer;
+        background: white;
+        box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+        outline: none;
+        display: inline-block;
+        transition: 0.8s;
+        position: relative;
+
+        &:hover
+        {
+          background-color: white;
+          background-position: center center;
+          background-image: radial-gradient(circle, transparent 1%, white 1%);
+          background-size: 25000%;
+        }
+        &:active
+        {
+          background-color: rgba(255, 255, 255, 0.7);
+          background-size: 100%;
+          transition: 0s;
+        }
+
+        .icono
+        {
+          color: $color1;
+          vertical-align: middle;
+          font-size: 27px;
+        }
+      }
+    }
+
+  }
+}
+
+.badged
+{
+  position: absolute;
+  top: -11px;
+  right: -11px;
+  width: 22px;
+  height: 22px;
+  line-height: 22px;
+  background-color: #f44336;
+  color: white !important;
+  border-radius: 50%;
+  font-size: 11px !important;
+  text-align: center;
+  display: inline-block;
+  overflow: hidden;
+  font-weight: bold;
+  letter-spacing: -1px;
+  pointer-events: none;
+}
